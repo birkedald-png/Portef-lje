@@ -17,7 +17,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bakgrunn: #171614;
     --flate: #211f1c;
     --tekst: #f1ede6;
@@ -30,7 +30,24 @@
     --kategori-1: #34483a;
     --kategori-2: #33415a;
     --kategori-3: #55492a;
+    color-scheme: dark;
   }
+}
+
+:root[data-theme="dark"] {
+  --bakgrunn: #171614;
+  --flate: #211f1c;
+  --tekst: #f1ede6;
+  --dempet: #a39d93;
+  --linje: #34312c;
+  --aksent: #e0875d;
+  --aksent-tekst: #171614;
+
+  --kategori-0: #5a3a2c;
+  --kategori-1: #34483a;
+  --kategori-2: #33415a;
+  --kategori-3: #55492a;
+  color-scheme: dark;
 }
 
 * {
@@ -80,7 +97,7 @@ a {
 /* Toppmeny */
 .topp {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top, 0px);
   z-index: 10;
   background: color-mix(in srgb, var(--bakgrunn) 88%, transparent);
   backdrop-filter: blur(8px);

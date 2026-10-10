@@ -101,7 +101,7 @@ function åpneDetaljer(p) {
 function lagKontakt() {
   const k = INNHOLD.kontakt;
   const lenker = [
-    k.epost && ["Send e-post", `mailto:${k.epost}`],
+    k.epost && [k.epost, `mailto:${k.epost}`],
     k.telefon && [k.telefon, `tel:${k.telefon.replace(/\s/g, "")}`],
     k.linkedin && ["LinkedIn", k.linkedin],
     k.cv && ["Last ned CV", k.cv],
