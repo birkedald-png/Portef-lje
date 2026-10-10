@@ -541,6 +541,10 @@ dialog::backdrop {
   margin-bottom: 6px;
 }
 
+#detaljer-innhold > .knapp {
+  margin-top: 24px;
+}
+
 #detaljer-innhold h4 + p {
   margin-top: 0;
 }

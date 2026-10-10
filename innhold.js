@@ -103,10 +103,21 @@ const INNHOLD = {
           tekst:
             "Kampanjen kom ut i print og digitalt på næringslivnorge.no, med god synlighet på LinkedIn og garanterte visninger i redaktørstyrte medier som E24, Finansavisen og DN. Printutgaven ble delt ut på bransjekonferanser: REN-konferansene (Nettverksuken 26 og temadager), Outlook North, CO2-konferansen og Betongdagene (Tekna), Betongindustridagene 2027, Industridagene i Innlandet, KI Dagene 2026, Tungbilkonferansen, Fagsamling Hav, Eltransportseminaret og Havvindkonferansen.",
         },
+        {
+          tittel: "Redaksjonelle samarbeidspartnere",
+          tekst:
+            "UN Global Compact Norge (lederartikkelen), Grønn Byggallianse, Miljøstiftelsen ZERO, Brønnøysundregistrene, Norwegian Offshore Wind og Betong Norge.",
+        },
+        {
+          tittel: "Kunder i kampanjen",
+          tekst:
+            "Wibe Group (forsiden), Bravida, ZEM, Kymar Motion, WTEX, WDF Isolasjon, BoilerGreen, Bürkert, Aider, ControlPartner, Isoenergi og A-2 Norge.",
+        },
       ],
       resultater: [], // Fyll inn, f.eks. "12 solgte plasser" – tom liste skjules på siden
-      bilde: "",
-      lenke: "",
+      bilde: "bilder/fremtidens-industri.jpg",
+      lenke: "filer/fremtidens-industri.pdf",
+      lenketekst: "Se temaavisen (PDF)",
     },
     {
       tittel: "Bacheloroppgave",
