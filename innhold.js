@@ -21,8 +21,8 @@
 
 const INNHOLD = {
   navn: "Dina Birkedal",
-  nå: "Bachelor i digital markedsføring og salgsledelse · Oslo",
-  overskrift: "Jeg kobler innhold, data og salg.",
+  nå: "Portefølje · Digital markedsføring og salg", // den lille linjen over overskriften
+  overskrift: "Dina Birkedal", // den store overskriften øverst
   intro:
     "Nyutdannet innen digital markedsføring og salgsledelse fra Høyskolen Kristiania. Jeg liker tempo, kundekontakt og å se at innsats gir resultater.",
   bilde: "bilder/dina.jpg",
