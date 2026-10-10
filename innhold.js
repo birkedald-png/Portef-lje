@@ -209,7 +209,8 @@ const INNHOLD = {
       ],
       resultater: [],
       bilde: "bilder/bacheloroppgave.jpg",
-      lenke: "",
+      lenke: "filer/bacheloroppgave.pdf",
+      lenketekst: "Les hele oppgaven her (PDF)",
     },
     {
       tittel: "Markedsplan for en merkevare",
