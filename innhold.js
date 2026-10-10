@@ -120,6 +120,51 @@ const INNHOLD = {
       lenketekst: "Se temaavisen (PDF)",
     },
     {
+      tittel: "Oslo Taxi: relevant for yngre",
+      kategori: "Case",
+      år: "2026",
+      kort: "Intervjucase: hvordan Oslo Taxi kan nå yngre målgrupper uten å miste posisjonen som trygg og profesjonell.",
+      beskrivelse:
+        "Dette er en caseoppgave jeg løste til andregangsintervju hos Oslo Taxi. Oppgaven var å vise hvordan jeg tenker rundt innhold og merkevare i praksis, fra analyse av merkevaren til innholdsidéer, et konkret innholdsforslag og hvordan det kan måles.",
+      deler: [
+        {
+          tittel: "Oppgaven",
+          tekst:
+            "Oslo Taxi har en sterk posisjon med høy tillit og tilfredshet, men taper andeler blant yngre målgrupper og i app-drevne kjøp. Menneskelig og relasjonelt innhold fungerer best, og trygghet er en viktig driver. Selskapet oppfattes som trygt og profesjonelt, men mindre relevant for yngre. Oppgaven hadde fire deler: forstå merkevaren, utvikle innholdsidéer, gjøre én idé konkret og reflektere rundt effekt og læring.",
+        },
+        {
+          tittel: "Min analyse av merkevaren",
+          punkter: [
+            "Styrker: sertifiserte sjåfører med to ukers internt kurs, streng rekruttering, lokalkunnskap, muligheten til å bestille på gata, over 100 år i Oslo siden 1921, og Taxifix-appen med fordeler som OBOS-rabatt, SAS EuroBonus og Vy-integrasjon.",
+            "Svakheter i sosiale medier: 1 508 følgere på Instagram og 2 165 på TikTok, lite autentisk menneskelig innhold, og kommunikasjon til folk i stedet for med dem. Nettsiden er transaksjonsbasert og mangler tydelige CTA-er.",
+            "Mot Bolt og Uber: de vinner på pris, men er ansiktsløse apper. Oslo Taxi har strengere sjåførutvalg og er tryggere, men kommuniserer det ikke godt nok, og Taxifix markedsføres for svakt.",
+            "Konklusjonen min: posisjonen er sterk, men stemmen er svak, og den digitale tilstedeværelsen gjenspeiler ikke det sterke produktet.",
+          ],
+        },
+        {
+          tittel: "Tre innholdsidéer",
+          punkter: [
+            "«Din sjåfør»: korte videoer der ekte sjåfører forteller hvem de er og hva de har opplevd, rett i kamera fra bilen. For 18–30 år. Ingen app kan gjenskape ekte mennesker, og serien gjør den nøye rekrutteringen synlig.",
+            "«Oslo-guiden»: sjåfører deler sine beste Oslo-tips, fra skjulte restauranter til beste kebab klokka to om natta. For 18–35 år, både lokale og turister. Gjør over 100 år med lokalkunnskap om til levende innhold.",
+            "«Taxi POV»: Oslo sett fra sjåførsetet, klippet sammen fra én vakt uten kommentarer. For 16–25 år. POV-formatet skaper gjenkjennelse og gjør trygghet og profesjonalitet menneskelig.",
+          ],
+        },
+        {
+          tittel: "Konkret innhold: «Din sjåfør»",
+          tekst:
+            "Jeg gjorde «Din sjåfør» konkret som en serie på 4–6 episoder over seks uker på TikTok og Instagram Reels, 45–60 sekunder hver. Episode 1 åpner med hooken «20 år bak rattet – han vet alt». En ekte sjåfør presenterer seg rett i kamera, deler et lokalt tips og avslutter med «Oslo er tusen historier. Jeg har hørt dem alle.» Tonen er varm og autentisk, ikke reklame, og CTA-en er å booke neste tur i Taxifix-appen.",
+        },
+        {
+          tittel: "Effekt og læring",
+          tekst:
+            "Jeg skilte mellom kommersielle mål og merkekjennskap, siden serien først og fremst bygger kjennskap, men har en kommersiell CTA. Jeg foreslo å måle appnedlastninger i Taxifix (mål: +20 % over seks uker), bestillinger fra 18–30 år, konvertering fra sosiale medier via UTM-lenker, rekkevidde (mål: 5 000+ visninger per video), engasjement, hvor mange som ser hele videoen og sentiment i kommentarene. Treffer det ikke, justerer jeg hook, lyd og publiseringstidspunkt, flytter CTA-en eller tester kortere videoer og en idé med mer konkret nytteverdi.",
+        },
+      ],
+      resultater: [],
+      bilde: "bilder/oslo-taxi.jpg",
+      lenke: "",
+    },
+    {
       tittel: "Bacheloroppgave",
       kategori: "Studier",
       år: "2026",
