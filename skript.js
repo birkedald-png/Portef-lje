@@ -12,7 +12,7 @@ function lag(tag, klasse, tekst) {
 function lenke(tekst, href, klasse) {
   const a = lag("a", klasse, tekst);
   a.href = href;
-  if (href.startsWith("http")) {
+  if (href.startsWith("http") || href.endsWith(".pdf")) {
     a.target = "_blank";
     a.rel = "noopener";
   }
@@ -101,12 +101,21 @@ function åpneDetaljer(p) {
     lag("h3", "", p.tittel),
     lag("p", "", p.beskrivelse)
   );
+  (p.deler || []).forEach((del) => {
+    innhold.append(lag("h4", "", del.tittel));
+    if (del.tekst) innhold.append(lag("p", "", del.tekst));
+    if (del.punkter) {
+      const liste = lag("ul", "punktliste");
+      del.punkter.forEach((punkt) => liste.append(lag("li", "", punkt)));
+      innhold.append(liste);
+    }
+  });
   if (p.resultater && p.resultater.length) {
     const liste = lag("ul", "resultater");
     p.resultater.forEach((r) => liste.append(lag("li", "", r)));
     innhold.append(lag("h4", "", "Resultater"), liste);
   }
-  if (p.lenke) innhold.append(lenke("Se prosjektet", p.lenke, "knapp"));
+  if (p.lenke) innhold.append(lenke(p.lenketekst || "Se prosjektet", p.lenke, "knapp"));
   $("#detaljer").showModal();
 }
 
