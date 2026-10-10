@@ -292,6 +292,7 @@ const INNHOLD = {
 
   // Dokumenter som vises under Utdanning. Fødselsnummer o.l. er skjult i filene.
   dokumenter: [
+    { tittel: "CV (PDF)", fil: "filer/cv.pdf" },
     { tittel: "Vitnemål (PDF)", fil: "filer/vitnemal.pdf" },
     { tittel: "Diploma Supplement (PDF)", fil: "filer/diploma-supplement.pdf" },
   ],
