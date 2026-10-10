@@ -162,7 +162,8 @@ const INNHOLD = {
       ],
       resultater: [],
       bilde: "bilder/oslo-taxi.jpg",
-      lenke: "",
+      lenke: "filer/oslo-taxi-case.pdf",
+      lenketekst: "Se hele løsningen (PDF)",
     },
     {
       tittel: "Bacheloroppgave",
