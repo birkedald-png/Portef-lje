@@ -66,7 +66,7 @@ const INNHOLD = {
       år: "2026",
       kort: "Min første kampanje i Mediaplanet: industri som er både konkurransedyktig og bærekraftig.",
       beskrivelse:
-        "Som Sales Project Manager i Mediaplanet Oslo hadde jeg ansvaret for kampanjen «Fremtidens industri» fra august til lanseringen i slutten av september 2026. Det var min første kampanje i Mediaplanet. Målet var å vise at industrien kan være konkurransedyktig og bærekraftig samtidig, og løfte frem virksomheter som lykkes med effektive tiltak og strategier.",
+        "Som Sales Project Manager i Mediaplanet Oslo ledet jeg kampanjen «Fremtidens industri» sammen med en kollega, fra august til lanseringen i slutten av september 2026. Det var min første kampanje i Mediaplanet. Målet var å vise at industrien kan være konkurransedyktig og bærekraftig samtidig, og løfte frem virksomheter som lykkes med effektive tiltak og strategier.",
       // Mer innhold i detaljvinduet. Hver del har en tittel og enten tekst eller punkter.
       deler: [
         {
@@ -78,7 +78,7 @@ const INNHOLD = {
           tittel: "Hva jeg gjorde",
           punkter: [
             "Definerte fem forretningsområder og bygde prospektlister for hvert av dem, til sammen over hundre selskaper.",
-            "Drev hele salgsløpet selv, fra kalde telefoner og førstegangsmail til infomail, tilbud og oppfølging, med all dialog logget i Salesforce.",
+            "Drev salgsløpet mot mine kunder fra start til slutt, fra kalde telefoner og førstegangsmail til infomail, tilbud og oppfølging, med all dialog logget i Salesforce.",
             "Pitchet og fikk med redaksjonelle samarbeidspartnere, blant annet UN Global Compact Norge på lederplass, Brønnøysundregistrene om bærekraftsrapportering og Betong Norge om lavkarbonbetong.",
             "Fikk på plass distribusjon på nye konferanser, blant annet Betongindustridagene, Industridagene i Innlandet og KI Dagene.",
             "Solgte sponsede artikler og annonser i tre pakkenivåer (bronse, sølv og gull), og skreddersydde løsninger når standardpakkene ikke passet: reprint av tidligere artikler, kun print eller kun digitalt.",
