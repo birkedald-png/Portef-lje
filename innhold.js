@@ -58,7 +58,6 @@ const INNHOLD = {
   ],
 
   // ---------- PROSJEKTER ----------
-  // «Markedsplan for en merkevare» er et forslag. Skriv om eller slett det.
   prosjekter: [
     {
       tittel: "Fremtidens industri",
@@ -213,14 +212,45 @@ const INNHOLD = {
       lenketekst: "Les hele oppgaven her (PDF)",
     },
     {
-      tittel: "Markedsplan for en merkevare",
+      tittel: "Digital strategi for Oslo Nye Teater",
       kategori: "Studier",
-      år: "2025",
-      kort: "Et fagprosjekt der du brukte digitale verktøy og data i praksis.",
+      år: "2024",
+      kort: "Semesteroppgave i digital markedsføring: hvordan Oslo Nye Teater kan nå studenter og unge voksne.",
       beskrivelse:
-        "Beskriv et skoleprosjekt du er stolt av: oppgaven, hva du bidro med, hvilke verktøy du brukte og hva du lærte.",
-      resultater: [],
-      bilde: "",
+        "Individuell semesteroppgave i emnet Digital markedsføring (DIG1100) ved Høyskolen Kristiania, våren 2024. Jeg utviklet en digital markedsstrategi for Oslo Nye Teater med mål om å nå et yngre publikum, fra analyse og målgruppe til nettside, Google og sosiale medier.",
+      deler: [
+        {
+          tittel: "Strategi og målgruppe",
+          punkter: [
+            "Situasjonsanalyse med SWOT, PESTEL og Porters fem krefter.",
+            "Inbound marketing og innholdsmarkedsføring som overordnet strategi, slik at målgruppen finner og velger teateret selv.",
+            "Målgruppe: studenter og unge voksne mellom 20 og 25 år, med persona og kundereise basert på AIDA-modellen.",
+            "SMART-mål om å selge 50 billetter i måneden til studenter og unge voksne, med salg til under 30 år som KPI.",
+          ],
+        },
+        {
+          tittel: "Nettside",
+          tekst:
+            "Jeg vurderte nettsiden ut fra brukervennlighet, lastehastighet, CTA, kundekommunikasjon og betaling. PageSpeed Insights ga 93 poeng på datamaskin, men bare 69 på mobil, og jeg pekte på hva som forsinket innlastingen. Jeg foreslo også én tydelig billettknapp per skjermbilde i en farge som skiller seg ut, og satte opp en måleplan i Google Analytics.",
+        },
+        {
+          tittel: "Google",
+          tekst:
+            "Søkeordsanalyse i Google Ads og en kombinasjonsstrategi med både betalte annonser og bloggartikler for organisk synlighet. Jeg prioriterte søkeord som «teaterkjellern» og «Centralteateret», som passer målgruppen, skrev ingresser til to blogginnlegg og laget fire annonser i Google Ads.",
+        },
+        {
+          tittel: "Sosiale medier: karaokefilter på Snapchat",
+          tekst:
+            "Jeg valgte Snapchat, der teateret ikke var til stede, fordi kanalen treffer 18–29 år. Konseptet er et AR-filter der brukeren synger med på sanger fra musikalen «Evita», får poeng og utfordrer vennene sine. Målet var 1 000 nye besøkende på nettsiden via Snapchat innen utgangen av 2024, målt i Google Analytics. Illustrasjonen av filteret tegnet jeg selv i Procreate.",
+        },
+        {
+          tittel: "KI i markedsføring",
+          tekst:
+            "Oppgaven hadde også en del om kunstig intelligens, der jeg drøftet om KI kan ta over jobben til en digital markedsfører, med ølfestivalen What's Brewing som eksempel.",
+        },
+      ],
+      resultater: ["Karakter: A"],
+      bilde: "bilder/oslo-nye-teater.jpg",
       lenke: "",
     },
   ],
