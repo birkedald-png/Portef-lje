@@ -489,6 +489,35 @@ nav a:hover {
   color: var(--aksent);
 }
 
+.kontaktinfo {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 48px;
+  margin: 32px 0 0;
+}
+
+.kontaktinfo dt {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.65;
+}
+
+.kontaktinfo dd {
+  margin: 4px 0 0;
+  font-family: var(--overskrift);
+  font-size: 1.35rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.kontaktinfo a {
+  color: inherit;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  text-underline-offset: 4px;
+}
+
 .kontakt .knapp.sekundær {
   color: var(--bakgrunn);
   border-color: color-mix(in srgb, var(--bakgrunn) 35%, transparent);
