@@ -1,0 +1,581 @@
+/* Farger og skrift – endre her for å gi siden et annet uttrykk */
+:root {
+  --bakgrunn: #faf8f5;
+  --flate: #ffffff;
+  --tekst: #1f1d1a;
+  --dempet: #6b665e;
+  --linje: #e6e1d9;
+  --aksent: #b4532a;
+  --aksent-tekst: #ffffff;
+
+  --kategori-0: #e9c9b8;
+  --kategori-1: #c9d8c5;
+  --kategori-2: #c8d3e3;
+  --kategori-3: #e6dbb4;
+
+  --overskrift: "Bricolage Grotesque", system-ui, sans-serif;
+  --brødtekst: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bakgrunn: #171614;
+    --flate: #211f1c;
+    --tekst: #f1ede6;
+    --dempet: #a39d93;
+    --linje: #34312c;
+    --aksent: #e0875d;
+    --aksent-tekst: #171614;
+
+    --kategori-0: #5a3a2c;
+    --kategori-1: #34483a;
+    --kategori-2: #33415a;
+    --kategori-3: #55492a;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bakgrunn: #171614;
+  --flate: #211f1c;
+  --tekst: #f1ede6;
+  --dempet: #a39d93;
+  --linje: #34312c;
+  --aksent: #e0875d;
+  --aksent-tekst: #171614;
+
+  --kategori-0: #5a3a2c;
+  --kategori-1: #34483a;
+  --kategori-2: #33415a;
+  --kategori-3: #55492a;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bakgrunn);
+  color: var(--tekst);
+  font-family: var(--brødtekst);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+}
+
+.beholder {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--overskrift);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 0.5em;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9em;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+a {
+  color: var(--aksent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--aksent);
+  outline-offset: 3px;
+}
+
+.etikett {
+  font-family: var(--brødtekst);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--aksent);
+  margin: 0 0 14px;
+}
+
+/* Toppmeny */
+.topp {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 10;
+  background: color-mix(in srgb, var(--bakgrunn) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linje);
+}
+
+.topp-innhold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-family: var(--overskrift);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--tekst);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 22px;
+}
+
+nav a {
+  color: var(--dempet);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--tekst);
+}
+
+/* Toppseksjon */
+.helt {
+  padding-block: 64px 72px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 64px;
+  align-items: end;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: var(--dempet);
+  max-width: 560px;
+  margin: 0;
+}
+
+.intro strong {
+  color: var(--tekst);
+}
+
+.portrett {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 200px 200px var(--radius) var(--radius);
+  background: var(--linje);
+}
+
+.knapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.knapp {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--aksent);
+  color: var(--aksent-tekst);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--aksent);
+}
+
+.knapp.sekundær {
+  background: transparent;
+  color: var(--tekst);
+  border-color: var(--linje);
+}
+
+.knapp:hover {
+  opacity: 0.88;
+}
+
+.seksjon {
+  padding-block: 56px;
+}
+
+/* Hva jeg kan bidra med */
+.fokus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.fokusområde {
+  border-top: 3px solid var(--tekst);
+  padding-top: 20px;
+}
+
+.fokusområde p {
+  color: var(--dempet);
+  margin: 0 0 16px;
+}
+
+.verktøy {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.verktøy li {
+  font-size: 0.8rem;
+  padding: 3px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--linje);
+  color: var(--dempet);
+}
+
+/* Prosjekter */
+.rutenett {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.kort {
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  background: var(--flate);
+  border: 1px solid var(--linje);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kort:hover,
+.kort:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.kort.stort {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+}
+
+.kort-bilde {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.kort.stort .kort-bilde {
+  aspect-ratio: auto;
+  min-height: 320px;
+  height: 100%;
+}
+
+.kort-bilde img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kort-bilde span {
+  font-family: var(--overskrift);
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 0.45;
+}
+
+.kort-tekst {
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.kort-tekst p {
+  margin: 0;
+}
+
+.kort-tekst > p:not(.meta) {
+  color: var(--dempet);
+}
+
+.kort.stort .kort-tekst {
+  padding: 36px;
+  justify-content: center;
+  gap: 10px;
+}
+
+.kort.stort h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.les-mer {
+  margin-top: auto;
+  padding-top: 12px;
+  font-weight: 600;
+  color: var(--aksent);
+}
+
+.meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dempet);
+}
+
+/* Bakgrunn */
+.bakgrunn-kolonner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+
+.bakgrunn .etikett {
+  color: var(--dempet);
+}
+
+.kortliste {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+}
+
+.kortliste li {
+  padding: 16px 0;
+  border-top: 1px solid var(--linje);
+}
+
+.kortliste li:last-child {
+  border-bottom: 1px solid var(--linje);
+}
+
+.kortliste-topp {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.kortliste p {
+  margin: 0;
+  color: var(--dempet);
+}
+
+.kortliste .sted {
+  color: var(--aksent);
+  font-weight: 600;
+}
+
+.periode {
+  color: var(--dempet);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Om meg */
+.om {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
+}
+
+.om-tekst {
+  font-size: 1.1rem;
+}
+
+.om-tekst p:first-child {
+  margin-top: 0;
+}
+
+.fakta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+
+.fakta li {
+  display: grid;
+  gap: 2px;
+  color: var(--dempet);
+}
+
+.tall {
+  font-family: var(--overskrift);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--tekst);
+}
+
+/* Kontakt */
+.kontakt {
+  background: var(--tekst);
+  color: var(--bakgrunn);
+  padding-block: 80px;
+  margin-top: 40px;
+}
+
+.kontakt h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 700px;
+}
+
+.kontakt p {
+  max-width: 560px;
+  opacity: 0.8;
+}
+
+.kontakt .etikett {
+  opacity: 1;
+  color: var(--aksent);
+}
+
+.kontakt .knapp.sekundær {
+  color: var(--bakgrunn);
+  border-color: color-mix(in srgb, var(--bakgrunn) 35%, transparent);
+}
+
+/* Detaljvindu */
+dialog {
+  width: min(640px, calc(100% - 32px));
+  max-height: calc(100% - 48px);
+  padding: 0 0 28px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--flate);
+  color: var(--tekst);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#detaljer-innhold > :not(.kort-bilde) {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+#detaljer-innhold .kort-bilde {
+  aspect-ratio: 16 / 7;
+}
+
+#detaljer-innhold .meta {
+  margin-top: 22px;
+}
+
+.lukk {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--flate);
+  color: var(--tekst);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.resultater {
+  padding-left: 1.2em;
+}
+
+/* Bunn */
+.bunn {
+  padding-block: 24px 40px;
+  color: var(--dempet);
+  font-size: 0.9rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .kort {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
+  .helt {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+  }
+  .portrett {
+    width: 200px;
+    order: -1;
+  }
+  .fokus,
+  .bakgrunn-kolonner,
+  .om,
+  .kort.stort {
+    grid-template-columns: 1fr;
+  }
+  .fokus,
+  .bakgrunn-kolonner,
+  .om {
+    gap: 32px;
+  }
+  .kort.stort .kort-bilde {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .kort.stort .kort-tekst {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo {
+    display: none;
+  }
+  .rutenett {
+    grid-template-columns: 1fr;
+  }
+}
