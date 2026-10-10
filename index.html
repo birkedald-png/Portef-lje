@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portefølje</title>
+    <meta name="description" content="Portefølje med arbeid innen digital markedsføring, salg og prosjektledelse." />
+    <link rel="stylesheet" href="stil.css" />
+  </head>
+  <body>
+    <header class="topp">
+      <div class="beholder topp-innhold">
+        <a href="#" class="logo" data-felt="navn"></a>
+        <nav>
+          <a href="#arbeid">Arbeid</a>
+          <a href="#om">Om meg</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="helt beholder">
+        <p class="undertittel" data-felt="tittel"></p>
+        <h1>Hei, jeg er <span data-felt="navn"></span>.</h1>
+        <p class="intro" data-felt="intro"></p>
+        <div class="knapper">
+          <a href="#arbeid" class="knapp">Se arbeidet mitt</a>
+          <a href="#kontakt" class="knapp sekundær">Ta kontakt</a>
+        </div>
+      </section>
+
+      <section id="arbeid" class="beholder seksjon">
+        <h2>Arbeid</h2>
+        <div class="filter" role="group" aria-label="Filtrer prosjekter"></div>
+        <div class="rutenett" id="prosjekter"></div>
+      </section>
+
+      <section id="om" class="beholder seksjon">
+        <h2>Om meg</h2>
+        <div class="om-tekst" id="om-tekst"></div>
+        <ul class="ferdigheter" id="ferdigheter"></ul>
+      </section>
+
+      <section id="kontakt" class="beholder seksjon">
+        <h2>Kontakt</h2>
+        <p>Har du et prosjekt eller en stilling du tror jeg passer til? Send meg gjerne en melding.</p>
+        <div class="knapper" id="kontaktlenker"></div>
+      </section>
+    </main>
+
+    <footer class="beholder bunn">
+      <p>© <span id="år"></span> <span data-felt="navn"></span></p>
+    </footer>
+
+    <dialog id="detaljer">
+      <button class="lukk" aria-label="Lukk">×</button>
+      <div id="detaljer-innhold"></div>
+    </dialog>
+
+    <script src="innhold.js"></script>
+    <script src="skript.js"></script>
+  </body>
+</html>

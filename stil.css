@@ -1,0 +1,345 @@
+/* Farger – endre her for å gi siden et annet uttrykk */
+:root {
+  --bakgrunn: #faf8f5;
+  --flate: #ffffff;
+  --tekst: #1f1d1a;
+  --dempet: #6b665e;
+  --linje: #e6e1d9;
+  --aksent: #b4532a;
+  --aksent-tekst: #ffffff;
+
+  --kategori-0: #e9c9b8;
+  --kategori-1: #c9d8c5;
+  --kategori-2: #c8d3e3;
+  --kategori-3: #e6dbb4;
+
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bakgrunn: #171614;
+    --flate: #211f1c;
+    --tekst: #f1ede6;
+    --dempet: #a39d93;
+    --linje: #34312c;
+    --aksent: #e0875d;
+    --aksent-tekst: #171614;
+
+    --kategori-0: #5a3a2c;
+    --kategori-1: #34483a;
+    --kategori-2: #33415a;
+    --kategori-3: #55492a;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bakgrunn);
+  color: var(--tekst);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+}
+
+.beholder {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1em;
+}
+
+a {
+  color: var(--aksent);
+}
+
+/* Toppmeny */
+.topp {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--bakgrunn) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--linje);
+}
+
+.topp-innhold {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.logo {
+  font-weight: 700;
+  color: var(--tekst);
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: var(--dempet);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  color: var(--tekst);
+}
+
+/* Toppseksjon */
+.helt {
+  padding-top: 90px;
+  padding-bottom: 70px;
+}
+
+.undertittel {
+  color: var(--aksent);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: var(--dempet);
+  max-width: 600px;
+}
+
+.knapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.knapp {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: var(--aksent);
+  color: var(--aksent-tekst);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid var(--aksent);
+}
+
+.knapp.sekundær {
+  background: transparent;
+  color: var(--tekst);
+  border-color: var(--linje);
+}
+
+.knapp:hover {
+  opacity: 0.88;
+}
+
+.seksjon {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Filter */
+.filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.filter button {
+  font: inherit;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--linje);
+  background: var(--flate);
+  color: var(--tekst);
+  cursor: pointer;
+}
+
+.filter button[aria-pressed="true"] {
+  background: var(--tekst);
+  color: var(--bakgrunn);
+  border-color: var(--tekst);
+}
+
+/* Prosjektkort */
+.rutenett {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.kort {
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  background: var(--flate);
+  border: 1px solid var(--linje);
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kort:hover,
+.kort:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.kort-bilde {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.kort-bilde img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kort-bilde span {
+  font-size: 3.5rem;
+  font-weight: 700;
+  opacity: 0.45;
+}
+
+.kort-tekst {
+  padding: 18px 20px 22px;
+}
+
+.kort-tekst p:last-child {
+  margin: 0;
+  color: var(--dempet);
+}
+
+.meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dempet);
+  margin: 0 0 6px;
+}
+
+/* Om meg */
+.om-tekst {
+  max-width: 680px;
+  font-size: 1.1rem;
+}
+
+.ferdigheter {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.ferdigheter li {
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: var(--flate);
+  border: 1px solid var(--linje);
+  font-size: 0.9rem;
+}
+
+/* Detaljvindu */
+dialog {
+  width: min(640px, calc(100% - 32px));
+  max-height: calc(100% - 48px);
+  padding: 0 0 28px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--flate);
+  color: var(--tekst);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#detaljer-innhold > :not(.kort-bilde) {
+  margin-left: 28px;
+  margin-right: 28px;
+}
+
+#detaljer-innhold .kort-bilde {
+  aspect-ratio: 16 / 7;
+}
+
+#detaljer-innhold .meta {
+  margin-top: 22px;
+}
+
+.lukk {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: var(--flate);
+  color: var(--tekst);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.resultater {
+  padding-left: 1.2em;
+}
+
+/* Bunn */
+.bunn {
+  border-top: 1px solid var(--linje);
+  padding-top: 24px;
+  padding-bottom: 40px;
+  color: var(--dempet);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 520px) {
+  nav {
+    gap: 14px;
+  }
+  .helt {
+    padding-top: 56px;
+  }
+}
