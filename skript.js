@@ -150,9 +150,23 @@ function lagOm() {
 
 function lagKontakt() {
   const k = INNHOLD.kontakt;
+
+  // Kontaktinformasjon som tekst: telefon, e-post og sted
+  const info = [
+    k.telefon && ["Telefon", k.telefon, `tel:${k.telefon.replace(/\s/g, "")}`],
+    k.epost && ["E-post", k.epost, `mailto:${k.epost}`],
+    k.sted && ["Sted", k.sted],
+  ].filter(Boolean);
+  info.forEach(([etikett, verdi, href]) => {
+    const rad = lag("div");
+    const dd = lag("dd");
+    dd.append(href ? lenke(verdi, href) : verdi);
+    rad.append(lag("dt", "", etikett), dd);
+    $("#kontaktinfo").append(rad);
+  });
+
   const lenker = [
-    k.epost && [k.epost, `mailto:${k.epost}`],
-    k.telefon && [k.telefon, `tel:${k.telefon.replace(/\s/g, "")}`],
+    k.epost && ["Send e-post", `mailto:${k.epost}`],
     k.linkedin && ["LinkedIn", k.linkedin],
     k.cv && ["Last ned CV", k.cv],
   ].filter(Boolean);
