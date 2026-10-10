@@ -1,4 +1,4 @@
-/* Farger – endre her for å gi siden et annet uttrykk */
+/* Farger og skrift – endre her for å gi siden et annet uttrykk */
 :root {
   --bakgrunn: #faf8f5;
   --flate: #ffffff;
@@ -13,6 +13,8 @@
   --kategori-2: #c8d3e3;
   --kategori-3: #e6dbb4;
 
+  --overskrift: "Bricolage Grotesque", system-ui, sans-serif;
+  --brødtekst: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --radius: 14px;
 }
 
@@ -54,6 +56,10 @@
   box-sizing: border-box;
 }
 
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -63,35 +69,63 @@ body {
   margin: 0;
   background: var(--bakgrunn);
   color: var(--tekst);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: var(--brødtekst);
   line-height: 1.6;
 }
 
+img {
+  max-width: 100%;
+}
+
 .beholder {
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding-inline: 20px;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.2;
+  font-family: var(--overskrift);
+  font-weight: 700;
+  line-height: 1.1;
   margin: 0 0 0.5em;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.2rem, 6vw, 3.6rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.6rem, 7vw, 5rem);
+  letter-spacing: -0.03em;
 }
 
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 1em;
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9em;
+}
+
+h3 {
+  font-size: 1.25rem;
 }
 
 a {
   color: var(--aksent);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--aksent);
+  outline-offset: 3px;
+}
+
+.etikett {
+  font-family: var(--brødtekst);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--aksent);
+  margin: 0 0 14px;
 }
 
 /* Toppmeny */
@@ -112,14 +146,16 @@ a {
 }
 
 .logo {
+  font-family: var(--overskrift);
   font-weight: 700;
+  font-size: 1.1rem;
   color: var(--tekst);
   text-decoration: none;
 }
 
 nav {
   display: flex;
-  gap: 20px;
+  gap: 22px;
 }
 
 nav a {
@@ -132,45 +168,39 @@ nav a:hover {
   color: var(--tekst);
 }
 
-[hidden] {
-  display: none !important;
-}
-
 /* Toppseksjon */
 .helt {
-  padding-top: 72px;
-  padding-bottom: 56px;
+  padding-block: 64px 72px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 64px;
+  align-items: end;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: var(--dempet);
+  max-width: 560px;
+  margin: 0;
+}
+
+.intro strong {
+  color: var(--tekst);
 }
 
 .portrett {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 200px 200px var(--radius) var(--radius);
   background: var(--linje);
-}
-
-.undertittel {
-  color: var(--aksent);
-  font-weight: 600;
-  margin: 0 0 12px;
-}
-
-.intro {
-  font-size: 1.2rem;
-  color: var(--dempet);
-  max-width: 600px;
 }
 
 .knapper {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 32px;
 }
 
 .knapp {
@@ -195,40 +225,49 @@ nav a:hover {
 }
 
 .seksjon {
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-block: 56px;
 }
 
-/* Filter */
-.filter {
+/* Hva jeg kan bidra med */
+.fokus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+}
+
+.fokusområde {
+  border-top: 3px solid var(--tekst);
+  padding-top: 20px;
+}
+
+.fokusområde p {
+  color: var(--dempet);
+  margin: 0 0 16px;
+}
+
+.verktøy {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 28px;
+  gap: 6px;
 }
 
-.filter button {
-  font: inherit;
-  font-size: 0.9rem;
-  padding: 8px 16px;
+.verktøy li {
+  font-size: 0.8rem;
+  padding: 3px 10px;
   border-radius: 999px;
   border: 1px solid var(--linje);
-  background: var(--flate);
-  color: var(--tekst);
-  cursor: pointer;
+  color: var(--dempet);
 }
 
-.filter button[aria-pressed="true"] {
-  background: var(--tekst);
-  color: var(--bakgrunn);
-  border-color: var(--tekst);
-}
-
-/* Prosjektkort */
+/* Prosjekter */
 .rutenett {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
+  margin-top: 24px;
 }
 
 .kort {
@@ -243,7 +282,7 @@ nav a:hover {
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  width: 100%;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
@@ -251,6 +290,11 @@ nav a:hover {
 .kort:focus-visible {
   transform: translateY(-4px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.kort.stort {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
 }
 
 .kort-bilde {
@@ -261,6 +305,12 @@ nav a:hover {
   overflow: hidden;
 }
 
+.kort.stort .kort-bilde {
+  aspect-ratio: auto;
+  min-height: 320px;
+  height: 100%;
+}
+
 .kort-bilde img {
   width: 100%;
   height: 100%;
@@ -268,18 +318,43 @@ nav a:hover {
 }
 
 .kort-bilde span {
-  font-size: 3.5rem;
+  font-family: var(--overskrift);
+  font-size: 4rem;
   font-weight: 700;
   opacity: 0.45;
 }
 
 .kort-tekst {
-  padding: 18px 20px 22px;
+  padding: 20px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
 }
 
-.kort-tekst p:last-child {
+.kort-tekst p {
   margin: 0;
+}
+
+.kort-tekst > p:not(.meta) {
   color: var(--dempet);
+}
+
+.kort.stort .kort-tekst {
+  padding: 36px;
+  justify-content: center;
+  gap: 10px;
+}
+
+.kort.stort h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.les-mer {
+  margin-top: auto;
+  padding-top: 12px;
+  font-weight: 600;
+  color: var(--aksent);
 }
 
 .meta {
@@ -287,91 +362,121 @@ nav a:hover {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--dempet);
-  margin: 0 0 6px;
 }
 
-/* Tidslinje for erfaring og utdanning */
-.mellomtittel {
-  margin-top: 56px;
+/* Bakgrunn */
+.bakgrunn-kolonner {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
 }
 
-.tidslinje {
+.bakgrunn .etikett {
+  color: var(--dempet);
+}
+
+.kortliste {
   list-style: none;
-  margin: 0;
   padding: 0;
-  display: grid;
-  gap: 0;
+  margin: 0 0 32px;
 }
 
-.tidslinje li {
-  display: grid;
-  grid-template-columns: 180px minmax(0, 1fr);
-  gap: 24px;
-  padding: 22px 0;
+.kortliste li {
+  padding: 16px 0;
   border-top: 1px solid var(--linje);
 }
 
-.tidslinje li:last-child {
+.kortliste li:last-child {
   border-bottom: 1px solid var(--linje);
 }
 
-.periode {
+.kortliste-topp {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.kortliste p {
   margin: 0;
   color: var(--dempet);
-  font-size: 0.95rem;
+}
+
+.kortliste .sted {
+  color: var(--aksent);
+  font-weight: 600;
+}
+
+.periode {
+  color: var(--dempet);
+  font-size: 0.9rem;
   font-variant-numeric: tabular-nums;
 }
 
-.tidslinje h3 {
-  font-size: 1.1rem;
-  margin: 0;
-}
-
-.tidslinje .sted {
-  color: var(--aksent);
-  font-weight: 600;
-  margin: 2px 0 8px;
-}
-
-.tidslinje-tekst p:last-child {
-  margin-bottom: 0;
-  max-width: 640px;
-}
-
-/* Kompetanse */
-.kompetanse {
+/* Om meg */
+.om {
   display: grid;
-  gap: 28px;
-}
-
-.kompetansegruppe h3 {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--dempet);
-  margin-bottom: 12px;
-}
-
-.brikker {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.brikker li {
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: var(--flate);
-  border: 1px solid var(--linje);
-  font-size: 0.9rem;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: start;
 }
 
 .om-tekst {
-  max-width: 680px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
+}
+
+.om-tekst p:first-child {
+  margin-top: 0;
+}
+
+.fakta {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 20px;
+}
+
+.fakta li {
+  display: grid;
+  gap: 2px;
+  color: var(--dempet);
+}
+
+.tall {
+  font-family: var(--overskrift);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--tekst);
+}
+
+/* Kontakt */
+.kontakt {
+  background: var(--tekst);
+  color: var(--bakgrunn);
+  padding-block: 80px;
+  margin-top: 40px;
+}
+
+.kontakt h2 {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  max-width: 700px;
+}
+
+.kontakt p {
+  max-width: 560px;
+  opacity: 0.8;
+}
+
+.kontakt .etikett {
+  opacity: 1;
+  color: var(--aksent);
+}
+
+.kontakt .knapp.sekundær {
+  color: var(--bakgrunn);
+  border-color: color-mix(in srgb, var(--bakgrunn) 35%, transparent);
 }
 
 /* Detaljvindu */
@@ -422,14 +527,21 @@ dialog::backdrop {
 
 /* Bunn */
 .bunn {
-  border-top: 1px solid var(--linje);
-  padding-top: 24px;
-  padding-bottom: 40px;
+  padding-block: 24px 40px;
   color: var(--dempet);
   font-size: 0.9rem;
 }
 
-@media (max-width: 760px) {
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .kort {
+    transition: none;
+  }
+}
+
+@media (max-width: 860px) {
   .helt {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -439,9 +551,23 @@ dialog::backdrop {
     width: 200px;
     order: -1;
   }
-  .tidslinje li {
+  .fokus,
+  .bakgrunn-kolonner,
+  .om,
+  .kort.stort {
     grid-template-columns: 1fr;
-    gap: 4px;
+  }
+  .fokus,
+  .bakgrunn-kolonner,
+  .om {
+    gap: 32px;
+  }
+  .kort.stort .kort-bilde {
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+  }
+  .kort.stort .kort-tekst {
+    padding: 22px;
   }
 }
 
@@ -449,7 +575,7 @@ dialog::backdrop {
   .logo {
     display: none;
   }
-  nav {
-    gap: 16px;
+  .rutenett {
+    grid-template-columns: 1fr;
   }
 }

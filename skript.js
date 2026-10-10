@@ -19,10 +19,8 @@ function lenke(tekst, href, klasse) {
   return a;
 }
 
-// Kategoriene hentes fra prosjektene, i den rekkefølgen de først dukker opp
-const kategorier = [...new Set(INNHOLD.prosjekter.map((p) => p.kategori))];
-
 // Fast farge per kategori, brukt når prosjektet mangler bilde
+const kategorier = [...new Set(INNHOLD.prosjekter.map((p) => p.kategori))];
 function farge(kategori) {
   return `var(--kategori-${Math.max(0, kategorier.indexOf(kategori)) % 4})`;
 }
@@ -41,8 +39,16 @@ function fyllTekstfelt() {
   } else {
     portrett.hidden = true;
   }
+}
 
-  INNHOLD.om.forEach((avsnitt) => $("#om-tekst").append(lag("p", "", avsnitt)));
+function lagFokus() {
+  INNHOLD.fokus.forEach((f) => {
+    const blokk = lag("div", "fokusområde");
+    const verktøy = lag("ul", "verktøy");
+    f.verktøy.forEach((v) => verktøy.append(lag("li", "", v)));
+    blokk.append(lag("h3", "", f.tittel), lag("p", "", f.tekst), verktøy);
+    $("#fokusliste").append(blokk);
+  });
 }
 
 function lagBilde(p) {
@@ -60,47 +66,31 @@ function lagBilde(p) {
   return bilde;
 }
 
-function visProsjekter(filter) {
-  const liste = $("#prosjektliste");
-  liste.replaceChildren();
-  INNHOLD.prosjekter
-    .filter((p) => filter === "Alle" || p.kategori === filter)
-    .forEach((p) => {
-      const kort = lag("button", "kort");
-      kort.type = "button";
-      const tekst = lag("div", "kort-tekst");
-      tekst.append(
-        lag("p", "meta", `${p.kategori} · ${p.år}`),
-        lag("h3", "", p.tittel),
-        lag("p", "", p.kort)
-      );
-      kort.append(lagBilde(p), tekst);
-      kort.addEventListener("click", () => åpneDetaljer(p));
-      liste.append(kort);
-    });
+function lagKort(p, klasse) {
+  const kort = lag("button", klasse);
+  kort.type = "button";
+  const tekst = lag("div", "kort-tekst");
+  tekst.append(lag("p", "meta", `${p.kategori} · ${p.år}`), lag("h3", "", p.tittel), lag("p", "", p.kort));
+  if (klasse.includes("stort") && p.resultater && p.resultater.length) {
+    const r = lag("ul", "verktøy");
+    p.resultater.forEach((x) => r.append(lag("li", "", x)));
+    tekst.append(r);
+  }
+  tekst.append(lag("span", "les-mer", "Les mer →"));
+  kort.append(lagBilde(p), tekst);
+  kort.addEventListener("click", () => åpneDetaljer(p));
+  return kort;
 }
 
 function lagProsjekter() {
-  if (!INNHOLD.prosjekter.length) {
+  const [første, ...resten] = INNHOLD.prosjekter;
+  if (!første) {
     $("#prosjekter").hidden = true;
     $('nav a[href="#prosjekter"]').hidden = true;
     return;
   }
-  // Filterknapper vises bare når det finnes mer enn én kategori
-  if (kategorier.length > 1) {
-    const filter = $(".filter");
-    ["Alle", ...kategorier].forEach((kat, i) => {
-      const knapp = lag("button", "", kat);
-      knapp.type = "button";
-      knapp.setAttribute("aria-pressed", i === 0);
-      knapp.addEventListener("click", () => {
-        filter.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === knapp));
-        visProsjekter(kat);
-      });
-      filter.append(knapp);
-    });
-  }
-  visProsjekter("Alle");
+  $("#utvalgt").append(lagKort(første, "kort stort"));
+  resten.forEach((p) => $("#prosjektliste").append(lagKort(p, "kort")));
 }
 
 function åpneDetaljer(p) {
@@ -120,24 +110,23 @@ function åpneDetaljer(p) {
   $("#detaljer").showModal();
 }
 
-function lagTidslinje(liste, mål) {
+function lagListe(liste, mål) {
   liste.forEach((punkt) => {
     const li = lag("li");
-    const tekst = lag("div", "tidslinje-tekst");
-    tekst.append(lag("h3", "", punkt.tittel), lag("p", "sted", punkt.sted));
-    if (punkt.tekst) tekst.append(lag("p", "", punkt.tekst));
-    li.append(lag("p", "periode", punkt.periode), tekst);
+    const topp = lag("div", "kortliste-topp");
+    topp.append(lag("strong", "", punkt.tittel), lag("span", "periode", punkt.periode));
+    li.append(topp, lag("p", "sted", punkt.sted));
+    if (punkt.tekst) li.append(lag("p", "", punkt.tekst));
     $(mål).append(li);
   });
 }
 
-function lagKompetanse() {
-  INNHOLD.kompetanse.forEach((gruppe) => {
-    const blokk = lag("div", "kompetansegruppe");
-    const ul = lag("ul", "brikker");
-    gruppe.punkter.forEach((p) => ul.append(lag("li", "", p)));
-    blokk.append(lag("h3", "", gruppe.tittel), ul);
-    $("#kompetanseliste").append(blokk);
+function lagOm() {
+  INNHOLD.om.forEach((avsnitt) => $("#om-tekst").append(lag("p", "", avsnitt)));
+  INNHOLD.fakta.forEach((f) => {
+    const li = lag("li");
+    li.append(lag("span", "tall", f.tall), lag("span", "", f.tekst));
+    $("#faktaliste").append(li);
   });
 }
 
@@ -156,9 +145,9 @@ function lagKontakt() {
 
   // Knapper i toppen: CV hvis den finnes, ellers LinkedIn
   const helt = $("#helt-knapper");
-  if (k.cv) helt.append(lenke("Last ned CV", k.cv, "knapp"));
-  else if (k.linkedin) helt.append(lenke("Se LinkedIn", k.linkedin, "knapp"));
-  helt.append(lenke("Ta kontakt", "#kontakt", "knapp sekundær"));
+  helt.append(lenke("Se prosjektene", "#prosjekter", "knapp"));
+  if (k.cv) helt.append(lenke("Last ned CV", k.cv, "knapp sekundær"));
+  else if (k.linkedin) helt.append(lenke("LinkedIn", k.linkedin, "knapp sekundær"));
 }
 
 const dialog = $("#detaljer");
@@ -169,8 +158,9 @@ dialog.addEventListener("click", (e) => {
 });
 
 fyllTekstfelt();
+lagFokus();
 lagProsjekter();
-lagTidslinje(INNHOLD.erfaring, "#erfaringsliste");
-lagTidslinje(INNHOLD.utdanning, "#utdanningsliste");
-lagKompetanse();
+lagListe(INNHOLD.erfaring, "#erfaringsliste");
+lagListe(INNHOLD.utdanning, "#utdanningsliste");
+lagOm();
 lagKontakt();
