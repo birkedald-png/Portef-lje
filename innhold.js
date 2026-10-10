@@ -21,7 +21,7 @@
 
 const INNHOLD = {
   navn: "Dina Birkedal",
-  nå: "Prosjektleder i Mediaplanet · Oslo",
+  nå: "Bachelor i digital markedsføring og salgsledelse · Oslo",
   overskrift: "Jeg kobler innhold, data og salg.",
   intro:
     "Nyutdannet innen digital markedsføring og salgsledelse fra Høyskolen Kristiania. Jeg liker tempo, kundekontakt og å se at innsats gir resultater.",
@@ -52,7 +52,7 @@ const INNHOLD = {
     {
       tittel: "Prosjektledelse",
       tekst:
-        "Planlegger og gjennomfører temakampanjer med mange samarbeidspartnere og faste frister.",
+        "Har planlagt og gjennomført temakampanjer med mange samarbeidspartnere og faste frister.",
       verktøy: ["Excel", "Microsoft Office", "Teams", "KI-verktøy"],
     },
   ],
@@ -98,10 +98,10 @@ const INNHOLD = {
   // ---------- ERFARING (kun det som er relevant) ----------
   erfaring: [
     {
-      periode: "2026 – nå",
+      periode: "2026",
       tittel: "Prosjektleder",
       sted: "Mediaplanet",
-      tekst: "Salg og gjennomføring av temakampanjer digitalt og i print. Oppsøkende B2B-salg.",
+      tekst: "Solgte og gjennomførte temakampanjer digitalt og i print. Oppsøkende B2B-salg.",
     },
     {
       periode: "2024 – 2026",
