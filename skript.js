@@ -130,6 +130,15 @@ function lagListe(liste, mål) {
   });
 }
 
+function lagDokumenter() {
+  const dokumenter = INNHOLD.dokumenter || [];
+  if (!dokumenter.length) {
+    $("#dokumentasjon").hidden = true;
+    return;
+  }
+  dokumenter.forEach((d) => $("#dokumentliste").append(lenke(d.tittel, d.fil, "knapp sekundær")));
+}
+
 function lagOm() {
   INNHOLD.om.forEach((avsnitt) => $("#om-tekst").append(lag("p", "", avsnitt)));
   INNHOLD.fakta.forEach((f) => {
@@ -171,5 +180,6 @@ lagFokus();
 lagProsjekter();
 lagListe(INNHOLD.erfaring, "#erfaringsliste");
 lagListe(INNHOLD.utdanning, "#utdanningsliste");
+lagDokumenter();
 lagOm();
 lagKontakt();

@@ -259,6 +259,12 @@ const INNHOLD = {
 
   språk: "Norsk (morsmål) og engelsk (flytende)",
 
+  // Dokumenter som vises under Utdanning. Fødselsnummer o.l. er skjult i filene.
+  dokumenter: [
+    { tittel: "Vitnemål (PDF)", fil: "filer/vitnemal.pdf" },
+    { tittel: "Diploma Supplement (PDF)", fil: "filer/diploma-supplement.pdf" },
+  ],
+
   // ---------- OM MEG ----------
   om: [
     "Utveksling i Australia og et år i Forsvaret har gjort meg selvstendig og god til å tilpasse meg nye situasjoner. I Kystvakten var jeg tillitsvalgt, med ansvar for kommunikasjonen mellom mannskap og ledelse.",

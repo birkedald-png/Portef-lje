@@ -413,6 +413,21 @@ nav a:hover {
   font-variant-numeric: tabular-nums;
 }
 
+.dokumenter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dokumenter .knapp {
+  padding: 9px 18px;
+  font-size: 0.95rem;
+}
+
+#dokumentasjon {
+  margin-top: 28px;
+}
+
 /* Om meg */
 .om {
   display: grid;
