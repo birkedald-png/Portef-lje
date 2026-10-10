@@ -298,12 +298,15 @@ const INNHOLD = {
 
   // ---------- OM MEG ----------
   om: [
-    "Utveksling i Australia og et år i Forsvaret har gjort meg selvstendig og god til å tilpasse meg nye situasjoner. I Kystvakten var jeg tillitsvalgt, med ansvar for kommunikasjonen mellom mannskap og ledelse.",
+    "På jobb er jeg strukturert og løsningsorientert, og jeg trives best når det er tempo og tydelige mål. Jeg har jobbet med kunder siden jeg var 15, i bakeri, dagligvare og klesbutikk, og vet hvor mye god service og oppfølging betyr. I Mediaplanet fulgte jeg opp hvert nei ved å spørre hvorfor, og kom tilbake med et bedre tilbud.",
+    "Jeg jobber godt både alene og i team. Utveksling i Australia og et år i Forsvaret har gjort meg selvstendig og god til å tilpasse meg nye situasjoner. I Kystvakten var jeg tillitsvalgt, med ansvar for kommunikasjonen mellom mannskap og ledelse, og lærte å samarbeide under press.",
+    "Jeg ser etter en rolle der innhold, data og strategi møtes, og der jeg får se at innsatsen gir resultater.",
     "På fritiden holder jeg meg i aktivitet med pilates, yoga og styrketrening, og går gjerne tur. Reising og nye kulturer gjør meg nysgjerrig.",
   ],
 
   // Små fakta som vises med store tall
   fakta: [
+    { tall: "8 år", tekst: "med kundekontakt og salg, fra bakeridisken til B2B" },
     { tall: "1 år", tekst: "som basic medic og tillitsvalgt i Kystvakten" },
     { tall: "5 mnd", tekst: "utveksling i Brisbane, Australia" },
     { tall: "16 år", tekst: "med dans, fra jeg var 3 til 19" },
