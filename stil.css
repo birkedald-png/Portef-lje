@@ -132,10 +132,26 @@ nav a:hover {
   color: var(--tekst);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 /* Toppseksjon */
 .helt {
-  padding-top: 90px;
-  padding-bottom: 70px;
+  padding-top: 72px;
+  padding-bottom: 56px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 56px;
+  align-items: center;
+}
+
+.portrett {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--linje);
 }
 
 .undertittel {
@@ -274,27 +290,88 @@ nav a:hover {
   margin: 0 0 6px;
 }
 
-/* Om meg */
-.om-tekst {
-  max-width: 680px;
-  font-size: 1.1rem;
+/* Tidslinje for erfaring og utdanning */
+.mellomtittel {
+  margin-top: 56px;
 }
 
-.ferdigheter {
+.tidslinje {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.tidslinje li {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 24px;
+  padding: 22px 0;
+  border-top: 1px solid var(--linje);
+}
+
+.tidslinje li:last-child {
+  border-bottom: 1px solid var(--linje);
+}
+
+.periode {
+  margin: 0;
+  color: var(--dempet);
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tidslinje h3 {
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.tidslinje .sted {
+  color: var(--aksent);
+  font-weight: 600;
+  margin: 2px 0 8px;
+}
+
+.tidslinje-tekst p:last-child {
+  margin-bottom: 0;
+  max-width: 640px;
+}
+
+/* Kompetanse */
+.kompetanse {
+  display: grid;
+  gap: 28px;
+}
+
+.kompetansegruppe h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--dempet);
+  margin-bottom: 12px;
+}
+
+.brikker {
   list-style: none;
   padding: 0;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 24px;
 }
 
-.ferdigheter li {
+.brikker li {
   padding: 6px 14px;
   border-radius: 999px;
   background: var(--flate);
   border: 1px solid var(--linje);
   font-size: 0.9rem;
+}
+
+.om-tekst {
+  max-width: 680px;
+  font-size: 1.05rem;
 }
 
 /* Detaljvindu */
@@ -352,11 +429,27 @@ dialog::backdrop {
   font-size: 0.9rem;
 }
 
-@media (max-width: 520px) {
-  nav {
-    gap: 14px;
-  }
+@media (max-width: 760px) {
   .helt {
-    padding-top: 56px;
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 40px;
+  }
+  .portrett {
+    width: 200px;
+    order: -1;
+  }
+  .tidslinje li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 520px) {
+  .logo {
+    display: none;
+  }
+  nav {
+    gap: 16px;
   }
 }

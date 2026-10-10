@@ -9,10 +9,22 @@ function lag(tag, klasse, tekst) {
   return el;
 }
 
+function lenke(tekst, href, klasse) {
+  const a = lag("a", klasse, tekst);
+  a.href = href;
+  if (href.startsWith("http")) {
+    a.target = "_blank";
+    a.rel = "noopener";
+  }
+  return a;
+}
+
+// Kategoriene hentes fra prosjektene, i den rekkefølgen de først dukker opp
+const kategorier = [...new Set(INNHOLD.prosjekter.map((p) => p.kategori))];
+
 // Fast farge per kategori, brukt når prosjektet mangler bilde
 function farge(kategori) {
-  const i = INNHOLD.kategorier.indexOf(kategori);
-  return `var(--kategori-${(i < 0 ? 0 : i) % 4})`;
+  return `var(--kategori-${Math.max(0, kategorier.indexOf(kategori)) % 4})`;
 }
 
 function fyllTekstfelt() {
@@ -22,8 +34,15 @@ function fyllTekstfelt() {
   });
   $("#år").textContent = new Date().getFullYear();
 
+  const portrett = $("#portrett");
+  if (INNHOLD.bilde) {
+    portrett.src = INNHOLD.bilde;
+    portrett.alt = `Portrett av ${INNHOLD.navn}`;
+  } else {
+    portrett.hidden = true;
+  }
+
   INNHOLD.om.forEach((avsnitt) => $("#om-tekst").append(lag("p", "", avsnitt)));
-  INNHOLD.ferdigheter.forEach((f) => $("#ferdigheter").append(lag("li", "", f)));
 }
 
 function lagBilde(p) {
@@ -42,8 +61,8 @@ function lagBilde(p) {
 }
 
 function visProsjekter(filter) {
-  const rutenett = $("#prosjekter");
-  rutenett.replaceChildren();
+  const liste = $("#prosjektliste");
+  liste.replaceChildren();
   INNHOLD.prosjekter
     .filter((p) => filter === "Alle" || p.kategori === filter)
     .forEach((p) => {
@@ -57,22 +76,31 @@ function visProsjekter(filter) {
       );
       kort.append(lagBilde(p), tekst);
       kort.addEventListener("click", () => åpneDetaljer(p));
-      rutenett.append(kort);
+      liste.append(kort);
     });
 }
 
-function lagFilter() {
-  const filter = $(".filter");
-  ["Alle", ...INNHOLD.kategorier].forEach((kat, i) => {
-    const knapp = lag("button", "", kat);
-    knapp.type = "button";
-    knapp.setAttribute("aria-pressed", i === 0);
-    knapp.addEventListener("click", () => {
-      filter.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === knapp));
-      visProsjekter(kat);
+function lagProsjekter() {
+  if (!INNHOLD.prosjekter.length) {
+    $("#prosjekter").hidden = true;
+    $('nav a[href="#prosjekter"]').hidden = true;
+    return;
+  }
+  // Filterknapper vises bare når det finnes mer enn én kategori
+  if (kategorier.length > 1) {
+    const filter = $(".filter");
+    ["Alle", ...kategorier].forEach((kat, i) => {
+      const knapp = lag("button", "", kat);
+      knapp.type = "button";
+      knapp.setAttribute("aria-pressed", i === 0);
+      knapp.addEventListener("click", () => {
+        filter.querySelectorAll("button").forEach((b) => b.setAttribute("aria-pressed", b === knapp));
+        visProsjekter(kat);
+      });
+      filter.append(knapp);
     });
-    filter.append(knapp);
-  });
+  }
+  visProsjekter("Alle");
 }
 
 function åpneDetaljer(p) {
@@ -88,14 +116,29 @@ function åpneDetaljer(p) {
     p.resultater.forEach((r) => liste.append(lag("li", "", r)));
     innhold.append(lag("h4", "", "Resultater"), liste);
   }
-  if (p.lenke) {
-    const a = lag("a", "knapp", "Se prosjektet");
-    a.href = p.lenke;
-    a.target = "_blank";
-    a.rel = "noopener";
-    innhold.append(a);
-  }
+  if (p.lenke) innhold.append(lenke("Se prosjektet", p.lenke, "knapp"));
   $("#detaljer").showModal();
+}
+
+function lagTidslinje(liste, mål) {
+  liste.forEach((punkt) => {
+    const li = lag("li");
+    const tekst = lag("div", "tidslinje-tekst");
+    tekst.append(lag("h3", "", punkt.tittel), lag("p", "sted", punkt.sted));
+    if (punkt.tekst) tekst.append(lag("p", "", punkt.tekst));
+    li.append(lag("p", "periode", punkt.periode), tekst);
+    $(mål).append(li);
+  });
+}
+
+function lagKompetanse() {
+  INNHOLD.kompetanse.forEach((gruppe) => {
+    const blokk = lag("div", "kompetansegruppe");
+    const ul = lag("ul", "brikker");
+    gruppe.punkter.forEach((p) => ul.append(lag("li", "", p)));
+    blokk.append(lag("h3", "", gruppe.tittel), ul);
+    $("#kompetanseliste").append(blokk);
+  });
 }
 
 function lagKontakt() {
@@ -108,14 +151,14 @@ function lagKontakt() {
   ].filter(Boolean);
 
   lenker.forEach(([tekst, href], i) => {
-    const a = lag("a", i === 0 ? "knapp" : "knapp sekundær", tekst);
-    a.href = href;
-    if (href.startsWith("http")) {
-      a.target = "_blank";
-      a.rel = "noopener";
-    }
-    $("#kontaktlenker").append(a);
+    $("#kontaktlenker").append(lenke(tekst, href, i === 0 ? "knapp" : "knapp sekundær"));
   });
+
+  // Knapper i toppen: CV hvis den finnes, ellers LinkedIn
+  const helt = $("#helt-knapper");
+  if (k.cv) helt.append(lenke("Last ned CV", k.cv, "knapp"));
+  else if (k.linkedin) helt.append(lenke("Se LinkedIn", k.linkedin, "knapp"));
+  helt.append(lenke("Ta kontakt", "#kontakt", "knapp sekundær"));
 }
 
 const dialog = $("#detaljer");
@@ -126,6 +169,8 @@ dialog.addEventListener("click", (e) => {
 });
 
 fyllTekstfelt();
-lagFilter();
-visProsjekter("Alle");
+lagProsjekter();
+lagTidslinje(INNHOLD.erfaring, "#erfaringsliste");
+lagTidslinje(INNHOLD.utdanning, "#utdanningsliste");
+lagKompetanse();
 lagKontakt();

@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portefølje</title>
-    <meta name="description" content="Portefølje med arbeid innen digital markedsføring, salg og prosjektledelse." />
+    <title>Dina Birkedal</title>
+    <meta name="description" content="Portefølje for Dina Birkedal – digital markedsføring og salg." />
     <link rel="stylesheet" href="stil.css" />
   </head>
   <body>
@@ -12,8 +12,9 @@
       <div class="beholder topp-innhold">
         <a href="#" class="logo" data-felt="navn"></a>
         <nav>
-          <a href="#arbeid">Arbeid</a>
-          <a href="#om">Om meg</a>
+          <a href="#prosjekter">Prosjekter</a>
+          <a href="#erfaring">Erfaring</a>
+          <a href="#kompetanse">Kompetanse</a>
           <a href="#kontakt">Kontakt</a>
         </nav>
       </div>
@@ -21,30 +22,40 @@
 
     <main>
       <section class="helt beholder">
-        <p class="undertittel" data-felt="tittel"></p>
-        <h1>Hei, jeg er <span data-felt="navn"></span>.</h1>
-        <p class="intro" data-felt="intro"></p>
-        <div class="knapper">
-          <a href="#arbeid" class="knapp">Se arbeidet mitt</a>
-          <a href="#kontakt" class="knapp sekundær">Ta kontakt</a>
+        <div class="helt-tekst">
+          <p class="undertittel"><span data-felt="rolle"></span> · <span data-felt="sted"></span></p>
+          <h1>Hei, jeg er <span data-felt="navn"></span>.</h1>
+          <p class="intro" data-felt="intro"></p>
+          <div class="knapper" id="helt-knapper"></div>
         </div>
+        <img class="portrett" id="portrett" alt="" />
       </section>
 
-      <section id="arbeid" class="beholder seksjon">
-        <h2>Arbeid</h2>
+      <section id="prosjekter" class="beholder seksjon">
+        <h2>Prosjekter</h2>
         <div class="filter" role="group" aria-label="Filtrer prosjekter"></div>
-        <div class="rutenett" id="prosjekter"></div>
+        <div class="rutenett" id="prosjektliste"></div>
       </section>
 
-      <section id="om" class="beholder seksjon">
-        <h2>Om meg</h2>
+      <section id="erfaring" class="beholder seksjon">
+        <h2>Arbeidserfaring</h2>
+        <ol class="tidslinje" id="erfaringsliste"></ol>
+
+        <h2 class="mellomtittel">Utdanning</h2>
+        <ol class="tidslinje" id="utdanningsliste"></ol>
+      </section>
+
+      <section id="kompetanse" class="beholder seksjon">
+        <h2>Kompetanse</h2>
+        <div class="kompetanse" id="kompetanseliste"></div>
+
+        <h2 class="mellomtittel">Om meg</h2>
         <div class="om-tekst" id="om-tekst"></div>
-        <ul class="ferdigheter" id="ferdigheter"></ul>
       </section>
 
       <section id="kontakt" class="beholder seksjon">
         <h2>Kontakt</h2>
-        <p>Har du et prosjekt eller en stilling du tror jeg passer til? Send meg gjerne en melding.</p>
+        <p>Ta gjerne kontakt om en stilling eller for en prat. Referanser oppgis på forespørsel.</p>
         <div class="knapper" id="kontaktlenker"></div>
       </section>
     </main>
