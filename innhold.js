@@ -58,7 +58,7 @@ const INNHOLD = {
   ],
 
   // ---------- PROSJEKTER ----------
-  // Bacheloroppgave og markedsplan er forslag. Skriv om dem eller slett dem.
+  // «Markedsplan for en merkevare» er et forslag. Skriv om eller slett det.
   prosjekter: [
     {
       tittel: "Fremtidens industri",
@@ -166,14 +166,49 @@ const INNHOLD = {
       lenketekst: "Se hele løsningen (PDF)",
     },
     {
-      tittel: "Bacheloroppgave",
+      tittel: "Mellom underholdning og engasjement",
       kategori: "Studier",
       år: "2026",
-      kort: "Bacheloroppgave i digital markedsføring og salgsledelse.",
+      kort: "Bacheloroppgave om hvordan unge (18–21 år) opplever politisk kommunikasjon på TikTok og Instagram.",
       beskrivelse:
-        "Skriv kort om problemstillingen, metoden og hva dere fant ut. Legg gjerne ved en lenke til oppgaven eller en presentasjon.",
+        "Bacheloroppgaven min i digital markedsføring og salgsledelse ved Høyskolen Kristiania, skrevet sammen med to medstudenter og levert i mai 2026. Vi undersøkte hvordan unge i stemmerettsalder opplever politisk kommunikasjon på TikTok og Instagram, og om virkemidler fra markedsføring skaper ekte engasjement eller mer overfladisk tilslutning.",
+      deler: [
+        {
+          tittel: "Bakgrunn",
+          tekst:
+            "Utgangspunktet var #stemFrP-trenden på TikTok rundt stortingsvalget i 2025, der unge skrev «StemFrP» i kommentarfeltet, også under videoer som ikke handlet om politikk. Samtidig tar partiene i bruk stadig mer fra digital markedsføring, som korte videoer, trender og målrettede annonser. Vi lurte på om det gir reelt engasjement, eller bare synlighet.",
+        },
+        {
+          tittel: "Problemstilling",
+          tekst:
+            "«Hvordan opplever unge i stemmerettsalder (18–21 år) politisk kommunikasjon på TikTok og Instagram, og på hvilke måter kan markedsføringsdrevne virkemidler bidra til substansielt politisk engasjement eller mer overfladisk tilslutning?»",
+        },
+        {
+          tittel: "Metode",
+          punkter: [
+            "Kvalitativt, utforskende design med semistrukturerte intervjuer av ti unge mellom 18 og 21 år.",
+            "Et pilotintervju førte til at vi kortet ned intervjuguiden fra syv til fem deler og fra 40 til 30 minutter.",
+            "Tematisk koding av intervjuene i tre trinn, med KI som støtte til å finne mønstre. Alle kategorier og tolkninger var våre egne.",
+            "Teori om plattformlogikk, personalisering, mediert autentisitet og politainment.",
+          ],
+        },
+        {
+          tittel: "Hva vi fant",
+          punkter: [
+            "Politikk når unge på plattformenes premisser. De oppsøker det sjelden, men møter det i feeden mellom alt annet innhold.",
+            "Humor, korte videoer og personlige uttrykk gjør politikk mer synlig, men gjør også oppmerksomheten kortvarig.",
+            "For noen blir underholdende innhold en inngang til videre refleksjon, diskusjon eller informasjonssøk. Tyngdepunktet ligger likevel nærmere overfladisk tilslutning, og for mange stopper engasjementet ved private samtaler med venner.",
+            "Unge vurderer innholdet gjennom et «autentisitetsfilter». Skillet går ikke mellom underholdning og alvor, men mellom det som oppleves ekte og det som oppleves strategisk påtatt.",
+          ],
+        },
+        {
+          tittel: "Hva jeg tar med meg",
+          tekst:
+            "Synlighet alene er ikke nok, og unge målgrupper merker raskt når innhold er påtatt. Det gjelder like mye for merkevarer som for politikere. Jeg lærte også å gå fra et stort datamateriale til tydelige funn, og å jobbe strukturert i en gruppe gjennom et helt studieår.",
+        },
+      ],
       resultater: [],
-      bilde: "",
+      bilde: "bilder/bacheloroppgave.jpg",
       lenke: "",
     },
     {
