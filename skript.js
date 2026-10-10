@@ -101,6 +101,15 @@ function åpneDetaljer(p) {
     lag("h3", "", p.tittel),
     lag("p", "", p.beskrivelse)
   );
+  (p.deler || []).forEach((del) => {
+    innhold.append(lag("h4", "", del.tittel));
+    if (del.tekst) innhold.append(lag("p", "", del.tekst));
+    if (del.punkter) {
+      const liste = lag("ul", "punktliste");
+      del.punkter.forEach((punkt) => liste.append(lag("li", "", punkt)));
+      innhold.append(liste);
+    }
+  });
   if (p.resultater && p.resultater.length) {
     const liste = lag("ul", "resultater");
     p.resultater.forEach((r) => liste.append(lag("li", "", r)));

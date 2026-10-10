@@ -58,16 +58,62 @@ const INNHOLD = {
   ],
 
   // ---------- PROSJEKTER ----------
-  // Eksemplene under er forslag. Skriv om dem eller slett dem.
+  // Bacheloroppgave og markedsplan er forslag. Skriv om dem eller slett dem.
   prosjekter: [
     {
-      tittel: "Temakampanje for Mediaplanet",
+      tittel: "Fremtidens industri",
       kategori: "Jobb",
       år: "2026",
-      kort: "Salg og gjennomføring av en temakampanje distribuert digitalt og i print.",
+      kort: "Min første kampanje i Mediaplanet: industri som er både konkurransedyktig og bærekraftig.",
       beskrivelse:
-        "Skriv om én konkret kampanje: hvilket tema, hvilke samarbeidspartnere du solgte inn, hvordan du fulgte dem opp og hvordan innholdet ble distribuert.",
-      resultater: ["Antall partnere", "Rekkevidde", "Omsetning"],
+        "Som Sales Project Manager i Mediaplanet Oslo hadde jeg ansvaret for kampanjen «Fremtidens industri» fra august til lanseringen i slutten av september 2026. Det var min første kampanje i Mediaplanet. Målet var å vise at industrien kan være konkurransedyktig og bærekraftig samtidig, og løfte frem virksomheter som lykkes med effektive tiltak og strategier.",
+      // Mer innhold i detaljvinduet. Hver del har en tittel og enten tekst eller punkter.
+      deler: [
+        {
+          tittel: "Bakgrunn",
+          tekst:
+            "Kravene til bærekraftig praksis skjerpes fra både interessenter og lovverk, og bedrifter som ikke omstiller seg nå, risikerer å tape konkurransekraft. Målgruppen var ledere og beslutningstakere i privat og offentlig sektor.",
+        },
+        {
+          tittel: "Hva jeg gjorde",
+          punkter: [
+            "Definerte fem forretningsområder og bygde prospektlister for hvert av dem, til sammen over hundre selskaper.",
+            "Drev hele salgsløpet selv, fra kalde telefoner og førstegangsmail til infomail, tilbud og oppfølging, med all dialog logget i Salesforce.",
+            "Pitchet og fikk med redaksjonelle samarbeidspartnere, blant annet UN Global Compact Norge på lederplass, Brønnøysundregistrene om bærekraftsrapportering og Betong Norge om lavkarbonbetong.",
+            "Fikk på plass distribusjon på nye konferanser, blant annet Betongindustridagene, Industridagene i Innlandet og KI Dagene.",
+            "Solgte sponsede artikler og annonser i tre pakkenivåer (bronse, sølv og gull), og skreddersydde løsninger når standardpakkene ikke passet: reprint av tidligere artikler, kun print eller kun digitalt.",
+            "Brukte plassering som salgsargument, for eksempel annonser ved siden av relevante redaksjonelle artikler, og koblet produsenter, distributører og forhandlere i samme verdikjede.",
+            "Tilpasset vinklingen til hvert selskap ut fra hva de faktisk jobber med, som lavkarbonbetong, datasentre, bærekraftsrapportering og utslippsfrie anleggsplasser.",
+            "Fulgte opp alle nei ved å spørre om årsaken og komme tilbake med et justert tilbud.",
+            "Landet vinkling og intervjukandidater sammen med kundene.",
+          ],
+        },
+        {
+          tittel: "Forretningsområder",
+          punkter: [
+            "Prosessindustri og råvarer",
+            "Robotikk, automatisering og AI",
+            "Sement og byggematerialer",
+            "Sirkulær økonomi og gjenvinning",
+            "Rådgivning innen grønn omstilling",
+          ],
+        },
+        {
+          tittel: "Distribusjon",
+          tekst:
+            "Kampanjen kom ut i print og digitalt på næringslivnorge.no, med god synlighet på LinkedIn og garanterte visninger i redaktørstyrte medier som E24, Finansavisen og DN. Printutgaven ble delt ut på bransjekonferanser: REN-konferansene (Nettverksuken 26 og temadager), Outlook North, CO2-konferansen og Betongdagene (Tekna), Betongindustridagene 2027, Industridagene i Innlandet, KI Dagene 2026, Tungbilkonferansen, Fagsamling Hav, Eltransportseminaret og Havvindkonferansen.",
+        },
+        {
+          tittel: "Redaksjonelle samarbeidspartnere",
+          tekst:
+            "UN Global Compact Norge (lederartikkelen), Miljøstiftelsen ZERO, Brønnøysundregistrene, Norwegian Offshore Wind, Grønn Byggallianse og Betong Norge.",
+        },
+        {
+          tittel: "Kunder i kampanjen",
+          tekst: "Bravida, Wibe Group, Aider, Boiler Green, WTEX, WDF Isolasjon, Kymar Motion og ZEM.",
+        },
+      ],
+      resultater: [], // Fyll inn, f.eks. "12 solgte plasser" – tom liste skjules på siden
       bilde: "",
       lenke: "",
     },
