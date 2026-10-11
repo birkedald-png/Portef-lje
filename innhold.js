@@ -118,22 +118,22 @@ const INNHOLD = {
         {
           tittel: "Utgangspunktet",
           tekst:
-            "Oslo Taxi har en sterk posisjon med høy tillit og tilfredshet, men taper andeler blant yngre målgrupper og i app-drevne kjøp. Menneskelig og relasjonelt innhold fungerer best, og trygghet er en viktig driver. Selskapet oppfattes som trygt og profesjonelt, men mindre relevant for yngre. Spørsmålet var hvordan Oslo Taxi kan bli mer relevant for unge, uten å miste posisjonen som trygg og profesjonell.",
+            "Oslo Taxi er en etablert merkevare som forbindes med trygghet og profesjonalitet. Samtidig foregår mer og mer av taxibestillingen i apper, og yngre målgrupper møter merkevarer først og fremst i sosiale medier. Spørsmålet var hvordan Oslo Taxi kan bli enda mer relevant for unge, uten å miste posisjonen som trygg og profesjonell.",
         },
         {
           tittel: "Min analyse av merkevaren",
           punkter: [
-            "Styrker: sertifiserte sjåfører med to ukers internt kurs, streng rekruttering, lokalkunnskap, muligheten til å bestille på gata, over 100 år i Oslo siden 1921, og Taxifix-appen med fordeler som OBOS-rabatt, SAS EuroBonus og Vy-integrasjon.",
-            "Svakheter i sosiale medier: 1 508 følgere på Instagram og 2 165 på TikTok, lite autentisk menneskelig innhold, og kommunikasjon til folk i stedet for med dem. Nettsiden er transaksjonsbasert og mangler tydelige CTA-er.",
-            "Mot Bolt og Uber: de vinner på pris, men er ansiktsløse apper. Oslo Taxi har strengere sjåførutvalg og er tryggere, men kommuniserer det ikke godt nok, og Taxifix markedsføres for svakt.",
-            "Konklusjonen min: posisjonen er sterk, men stemmen er svak, og den digitale tilstedeværelsen gjenspeiler ikke det sterke produktet.",
+            "Styrker: nøye utvalgte og sertifiserte sjåfører med egen opplæring, god lokalkunnskap, muligheten til å bestille på gata, en lang historie i Oslo og Taxifix-appen med fordeler og samarbeid.",
+            "Muligheter i sosiale medier: mer ekte, menneskelig innhold, mer dialog med følgerne og raskere bruk av trender kan gjøre kanalene mer relevante for yngre. En tydelig vei fra innhold til bestilling i Taxifix gjør det lettere å gå fra interesse til tur.",
+            "Konkurransefortrinn: der app-baserte konkurrenter konkurrerer på pris, kan Oslo Taxi vise frem det de ikke kan kopiere: trygghet, ekte sjåfører og lokalkunnskap.",
+            "Konklusjonen min: produktet og posisjonen er sterke. Den største muligheten ligger i å fortelle historien på plattformene der de unge er, på en måte som ikke føles som reklame.",
           ],
         },
         {
           tittel: "Tre innholdsidéer",
           punkter: [
             "«Din sjåfør»: korte videoer der ekte sjåfører forteller hvem de er og hva de har opplevd, rett i kamera fra bilen. For 18–30 år. Ingen app kan gjenskape ekte mennesker, og serien gjør den nøye rekrutteringen synlig.",
-            "«Oslo-guiden»: sjåfører deler sine beste Oslo-tips, fra skjulte restauranter til beste kebab klokka to om natta. For 18–35 år, både lokale og turister. Gjør over 100 år med lokalkunnskap om til levende innhold.",
+            "«Oslo-guiden»: sjåfører deler sine beste Oslo-tips, fra skjulte restauranter til beste kebab klokka to om natta. For 18–35 år, både lokale og turister. Gjør lang lokalkunnskap om til levende innhold.",
             "«Taxi POV»: Oslo sett fra sjåførsetet, klippet sammen fra én vakt uten kommentarer. For 16–25 år. POV-formatet skaper gjenkjennelse og gjør trygghet og profesjonalitet menneskelig.",
           ],
         },
@@ -145,7 +145,7 @@ const INNHOLD = {
         {
           tittel: "Effekt og læring",
           tekst:
-            "Jeg skilte mellom kommersielle mål og merkekjennskap, siden serien først og fremst bygger kjennskap, men har en kommersiell CTA. Jeg foreslo å måle appnedlastninger i Taxifix (mål: +20 % over seks uker), bestillinger fra 18–30 år, konvertering fra sosiale medier via UTM-lenker, rekkevidde (mål: 5 000+ visninger per video), engasjement, hvor mange som ser hele videoen og sentiment i kommentarene. Treffer det ikke, justerer jeg hook, lyd og publiseringstidspunkt, flytter CTA-en eller tester kortere videoer og en idé med mer konkret nytteverdi.",
+            "Jeg skilte mellom kommersielle mål og merkekjennskap, siden serien først og fremst bygger kjennskap, men har en kommersiell CTA. Jeg foreslo konkrete mål og å måle appnedlastninger i Taxifix, bestillinger fra yngre kunder, konvertering fra sosiale medier via UTM-lenker, rekkevidde, engasjement, hvor mange som ser hele videoen og sentiment i kommentarene. Treffer det ikke, justerer jeg hook, lyd og publiseringstidspunkt, flytter CTA-en eller tester kortere videoer og en idé med mer konkret nytteverdi.",
         },
       ],
       resultater: [],
