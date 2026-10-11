@@ -123,14 +123,14 @@ const INNHOLD = {
       tittel: "Oslo Taxi: relevant for yngre",
       kategori: "Case",
       år: "2026",
-      kort: "Intervjucase: hvordan Oslo Taxi kan nå yngre målgrupper uten å miste posisjonen som trygg og profesjonell.",
+      kort: "Markedscase: hvordan Oslo Taxi kan nå yngre målgrupper uten å miste posisjonen som trygg og profesjonell.",
       beskrivelse:
-        "Dette er en caseoppgave jeg løste til andregangsintervju hos Oslo Taxi. Oppgaven var å vise hvordan jeg tenker rundt innhold og merkevare i praksis, fra analyse av merkevaren til innholdsidéer, et konkret innholdsforslag og hvordan det kan måles.",
+        "En markedscase der jeg analyserte merkevaren til Oslo Taxi og utviklet innhold som kan gjøre selskapet mer relevant for yngre målgrupper. Casen går fra analyse av merkevaren til innholdsidéer, et konkret innholdsforslag og hvordan det kan måles.",
       deler: [
         {
-          tittel: "Oppgaven",
+          tittel: "Utgangspunktet",
           tekst:
-            "Oslo Taxi har en sterk posisjon med høy tillit og tilfredshet, men taper andeler blant yngre målgrupper og i app-drevne kjøp. Menneskelig og relasjonelt innhold fungerer best, og trygghet er en viktig driver. Selskapet oppfattes som trygt og profesjonelt, men mindre relevant for yngre. Oppgaven hadde fire deler: forstå merkevaren, utvikle innholdsidéer, gjøre én idé konkret og reflektere rundt effekt og læring.",
+            "Oslo Taxi har en sterk posisjon med høy tillit og tilfredshet, men taper andeler blant yngre målgrupper og i app-drevne kjøp. Menneskelig og relasjonelt innhold fungerer best, og trygghet er en viktig driver. Selskapet oppfattes som trygt og profesjonelt, men mindre relevant for yngre. Spørsmålet var hvordan Oslo Taxi kan bli mer relevant for unge, uten å miste posisjonen som trygg og profesjonell.",
         },
         {
           tittel: "Min analyse av merkevaren",
