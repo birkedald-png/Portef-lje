@@ -77,25 +77,13 @@ const INNHOLD = {
         {
           tittel: "Hva jeg gjorde",
           punkter: [
-            "Definerte fem forretningsområder og bygde prospektlister for hvert av dem, til sammen over hundre selskaper.",
+            "Valgte nøye ut fem forretningsområder for kampanjen og bygde prospektlister for hvert av dem, til sammen over hundre selskaper.",
             "Drev salgsløpet mot mine kunder fra start til slutt, fra kalde telefoner og førstegangsmail til infomail, tilbud og oppfølging, med all dialog logget i Salesforce.",
             "Pitchet og fikk med redaksjonelle samarbeidspartnere, blant annet UN Global Compact Norge på lederplass, Brønnøysundregistrene om bærekraftsrapportering og Betong Norge om lavkarbonbetong.",
-            "Fikk på plass distribusjon på nye konferanser, blant annet Betongindustridagene, Industridagene i Innlandet og KI Dagene.",
-            "Solgte sponsede artikler og annonser i tre pakkenivåer (bronse, sølv og gull), og skreddersydde løsninger når standardpakkene ikke passet: reprint av tidligere artikler, kun print eller kun digitalt.",
-            "Brukte plassering som salgsargument, for eksempel annonser ved siden av relevante redaksjonelle artikler, og koblet produsenter, distributører og forhandlere i samme verdikjede.",
+            "Valgte nøye ut konferansene kampanjen skulle deles ut på, og fikk på plass distribusjon på nye konferanser, blant annet Betongindustridagene, Industridagene i Innlandet og KI Dagene.",
             "Tilpasset vinklingen til hvert selskap ut fra hva de faktisk jobber med, som lavkarbonbetong, datasentre, bærekraftsrapportering og utslippsfrie anleggsplasser.",
             "Fulgte opp alle nei ved å spørre om årsaken og komme tilbake med et justert tilbud.",
             "Landet vinkling og intervjukandidater sammen med kundene.",
-          ],
-        },
-        {
-          tittel: "Forretningsområder",
-          punkter: [
-            "Prosessindustri og råvarer",
-            "Robotikk, automatisering og AI",
-            "Sement og byggematerialer",
-            "Sirkulær økonomi og gjenvinning",
-            "Rådgivning innen grønn omstilling",
           ],
         },
         {
