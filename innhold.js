@@ -29,7 +29,7 @@ const INNHOLD = {
 
   kontakt: {
     epost: "birkedald@gmail.com",
-    telefon: "900 67 023", // la stå tom ("") for å skjule nummeret
+    telefon: "+47 900 67 023", // la stå tom ("") for å skjule nummeret
     sted: "Oslo",
     linkedin: "https://www.linkedin.com/in/dinabirkedal",
     cv: "", // f.eks. "filer/cv.pdf" – la stå tom for å skjule knappen
