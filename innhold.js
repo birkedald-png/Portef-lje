@@ -290,6 +290,7 @@ const INNHOLD = {
     "På jobb er jeg strukturert og løsningsorientert, og jeg trives best når det er tempo og tydelige mål. Jeg har jobbet med kunder siden jeg var 15, i bakeri, dagligvare og klesbutikk, og vet hvor mye god service og oppfølging betyr. I Mediaplanet fulgte jeg opp hvert nei ved å spørre hvorfor, og kom tilbake med et bedre tilbud.",
     "Jeg jobber godt både alene og i team. Utveksling i Australia og et år i Forsvaret har gjort meg selvstendig og god til å tilpasse meg nye situasjoner. I Kystvakten var jeg tillitsvalgt, med ansvar for kommunikasjonen mellom mannskap og ledelse, og lærte å samarbeide under press.",
     "Jeg ser etter en rolle der innhold, data og strategi møtes, og der jeg får se at innsatsen gir resultater.",
+    "Jeg tok også et år på folkehøgskole, der vi blant annet gikk mange toppturer og reiste på turer til utlandet. Der hoppet jeg i fallskjerm og ble utfordret på områder jeg vanligvis ikke ville prøvd.",
     "På fritiden holder jeg meg i aktivitet med pilates, yoga og styrketrening, og går gjerne tur. Reising og nye kulturer gjør meg nysgjerrig.",
   ],
 
