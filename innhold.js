@@ -24,7 +24,7 @@ const INNHOLD = {
   nå: "Portefølje · Digital markedsføring og salg", // den lille linjen over overskriften
   overskrift: "Dina Birkedal", // den store overskriften øverst
   intro:
-    "Nyutdannet innen digital markedsføring og salgsledelse fra Høyskolen Kristiania. Jeg liker tempo, kundekontakt og å se at innsats gir resultater.",
+    "Nyutdannet innen digital markedsføring og salgsledelse fra Høyskolen Kristiania. Jeg ser etter en rolle innen paid social, performance eller programmatic, der innhold, data og strategi møtes.",
   bilde: "bilder/dina.jpg",
 
   kontakt: {
@@ -287,7 +287,6 @@ const INNHOLD = {
 
   // ---------- OM MEG ----------
   om: [
-    "Jeg ser etter en rolle der innhold, data og strategi møtes, og der jeg får se at innsatsen gir resultater.",
     "På jobb er jeg strukturert og løsningsorientert, og jeg trives best når det er tempo og tydelige mål. Jeg har jobbet med kunder siden jeg var 15, i bakeri, dagligvare og klesbutikk, og vet hvor mye god service og oppfølging betyr. I Mediaplanet fulgte jeg opp hvert nei ved å spørre hvorfor, og kom tilbake med et bedre tilbud.",
     "Jeg jobber godt både alene og i team. Utveksling i Australia og et år i Forsvaret har gjort meg selvstendig og god til å tilpasse meg nye situasjoner. I Kystvakten var jeg tillitsvalgt, med ansvar for kommunikasjonen mellom mannskap og ledelse, og lærte å samarbeide under press.",
     "Utenfor jobb har jeg blant annet tatt et år på folkehøgskole med toppturer, utenlandsturer og fallskjermhopp, og i dag holder jeg meg i aktivitet med pilates, yoga, styrketrening og turer i naturen.",
