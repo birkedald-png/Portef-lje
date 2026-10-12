@@ -296,7 +296,7 @@ const INNHOLD = {
 
   // Små fakta som vises med store tall
   fakta: [
-    { tall: "8 år", tekst: "med kundekontakt og salg, fra bakeridisken til B2B" },
+    { tall: "8 år", tekst: "med kundekontakt og salg, fra bakeridisken til B2B-salg" },
     { tall: "1 år", tekst: "som basic medic og tillitsvalgt i Kystvakten" },
     { tall: "5 mnd", tekst: "utveksling i Brisbane, Australia" },
     { tall: "16 år", tekst: "med dans, fra jeg var 3 til 19" },
